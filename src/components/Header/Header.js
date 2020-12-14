@@ -1,11 +1,14 @@
 import React from 'react';
+import './Header.css';
 
 const Header = () => (
-    <nav>
-        <div>
-            <a href="/">
-                Instagram
-            </a>
+    <nav className="Nav">
+        <div className="Nav-menus">
+            <div className="Nav-brand">
+                <a className="Nav-brand-logo" href="/">
+                    
+                </a>
+            </div>
         </div>
     </nav>
 );
