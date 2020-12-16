@@ -1,24 +1,31 @@
 import React from 'react';
 import "./Post.css";
-import avatar from "./../../avatar.jpg";
+//import avatar from "./../../avatar.jpg";
 
 class Post extends React.Component {
+    constructor(props){
+        super(props);
+    }
     render() {
+      const nickname = this.props.nickname;
+      const avatar = this.props.avatar;
+      const image = this.props.image;
+      const caption = this.props.caption;
       return (
         <article className="Post" ref="Post">
             <header>
                 <div className = "Post-user">
                     <div className="Post-user-avatar"><img src={avatar} alt='avatar' /> </div>
-                    <span className="Post-user-nickname">Stranger</span>
+                    <span className="Post-user-nickname">{nickname}</span>
                 </div>                
             </header>
             <div className="Post-image">
                 <div className="Post-image-bg">
-                    <img alt="Forest" src='https://images.unsplash.com/photo-1607798136809-1483b83f32fd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80' />
+                    <img alt={caption} src={image} />
                 </div>
             </div>
             <div className="Post-caption">
-                <strong>Stranger</strong> is here!                
+                <strong>{nickname}</strong> is here!                
             </div>
         </article>
       )
