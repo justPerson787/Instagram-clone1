@@ -3,25 +3,23 @@ import './App.css';
 import Header from './components/Header/Header';
 import Post from './components/Post/Post';
 import ApolloClient from 'apollo-boost';
-
+import { ApolloProvider } from "react-apollo";
 
 //connect to graphql server set in server/server.js
 const client = new ApolloClient({
     uri : "http://localhost:4000"
 })
 
-class App extends Component {
-  render() {
-    return (
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
       <div className="App">
         <Header />
-        <section className="App-main"></section>        
-          <Post nickname="Person1" avatar='https://images.unsplash.com/photo-1608114747154-d12dc3e4896b?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' caption="Post1" image="https://images.unsplash.com/photo-1608111283550-c03f719c5641?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
-          <Post nickname="Person2" avatar='https://images.unsplash.com/photo-1608114747154-d12dc3e4896b?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60' caption="Post2" image="https://images.unsplash.com/photo-1608111571896-ad7a024bac53?ixid=MXwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw4fHx8ZW58MHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"/>
-        
+        <section className="App-main">
+          <Post />
+        </section>
       </div>
-    );
-  }
-}
-
+    </ApolloProvider>
+  );
+};
 export default App;

@@ -87,3 +87,7 @@ let userslist = {
       graphiql: true
     })
   );
+
+  //application port for graphql server
+   // set application port
+   app.listen(4000);
