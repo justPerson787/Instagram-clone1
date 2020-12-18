@@ -75,3 +75,15 @@ let userslist = {
       return Object.values(postslist[user_id]);
     }
   };
+
+  //Create express app
+  let app = express();
+  app.use(cors());
+  app.use(
+    "/graphql",
+    graphqlHTTP({
+      schema: schema,
+      rootValue: root,
+      graphiql: true
+    })
+  );

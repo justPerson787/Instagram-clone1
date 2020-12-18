@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Post from './components/Post/Post';
+import ApolloClient from 'apollo-boost';
+
+
+//connect to graphql server set in server/server.js
+const client = new ApolloClient({
+    uri : "http://localhost:4000"
+})
 
 class App extends Component {
   render() {
