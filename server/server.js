@@ -62,3 +62,16 @@ let userslist = {
       }
     }
   };
+
+  //resolver function for each API endpoint
+  let root = {
+    user: function({ id }) {
+      return userslist[id];
+    },
+    post: function({ user_id , post_id }) {
+      return postslist[user_id][post_id];
+    },
+    posts: function({ user_id }){
+      return Object.values(postslist[user_id]);
+    }
+  };
