@@ -1,5 +1,5 @@
 let express = require("express");
-let graphqlHTTP = require("express-graphql");
+let { graphqlHTTP } = require("express-graphql");
 let { buildSchema } = require("graphql");
 let cors = require("cors");
 
@@ -28,11 +28,11 @@ let schema = buildSchema(`
 let userslist = {
     a: {
       id: "a",
-      nickname: "Starnger",
+      nickname: "Stranger",
       avatar: "https://images.unsplash.com/photo-1513313778780-9ae4807465f0?ixid=MXwxMjA3fDB8MHx0b3BpYy1mZWVkfDV8dG93SlpGc2twR2d8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-    },
-    [...]
+    },    
   };
+
   let postslist = {
     a: {
       a: {
@@ -91,3 +91,5 @@ let userslist = {
   //application port for graphql server
    // set application port
    app.listen(4000);
+
+   //run 'node server' and will run at http://localhost:4000/graphql
