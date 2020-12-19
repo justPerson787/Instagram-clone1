@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Post from './components/Post/Post';
@@ -7,7 +7,7 @@ import { ApolloProvider } from "react-apollo";
 
 //connect to graphql server set in server/server.js
 const client = new ApolloClient({
-    uri : "http://localhost:4000"
+    uri : "http://localhost:4000/graphql"
 })
 
 const App = () => {
