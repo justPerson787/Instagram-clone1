@@ -35,6 +35,7 @@
 }
 .Post-caption {
   padding: 16px 16px;
+  text-align: left;
 }
 .Post-caption strong {
   font-family: "PT Sans", sans-serif;
