@@ -7,4 +7,6 @@ The goal of this project was to learn and practice use of Apollo and graphQL ser
 
 React/JavaScript, graphQL, Apollo
 
+### Screenshot
+
 ![alt text](https://github.com/justPerson787/Instagram-imitation/blob/master/screenshot.png "screenshot").
